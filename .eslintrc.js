@@ -27,5 +27,6 @@ module.exports = {
         "indent": "off"
       }
     }
-  ]
+  ],
+  "ignorePatterns": ["aws-exports.js"]
 }

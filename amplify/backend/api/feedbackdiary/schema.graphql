@@ -1,0 +1,27 @@
+type Team @model
+@auth(rules: [{allow: owner}]) {
+  id: ID!
+  description: String
+  members: [Member] @connection(name: "TeamMembers")
+  created_at: AWSDateTime
+  updated_at: AWSDateTime
+}
+
+type Member @model
+@auth(rules: [{allow: owner}]) {
+  id: ID!
+  name: String!
+  position: String
+  team: Team @connection(name: "TeamMembers")
+  feedback: [Feedback] @connection(name: "MemberFeedbacks")
+  created_at: AWSDateTime
+  updated_at: AWSDateTime
+}
+
+type Feedback @model
+@auth(rules: [{allow: owner}]) {
+  id: ID!
+  member: Member @connection(name: "MemberFeedbacks")
+  created_at: AWSDateTime
+  updated_at: AWSDateTime
+}

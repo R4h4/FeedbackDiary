@@ -26,7 +26,10 @@ const nuxtConfig: Configuration = {
   },
   loading: { color: '#3B8070' },
   css: [],
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vuetify.options' },
+    { src: '~/plugins/aws-amplify', ssr: false }
+  ],
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
@@ -39,12 +42,7 @@ const nuxtConfig: Configuration = {
   ],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    optionsPath: '~/plugins/vuetify.options.js',
-    defaultAssets: {
-      icons: {
-        iconfont: 'mdi'
-      }
-    }
+    optionsPath: '~/plugins/vuetify.options.ts'
   },
   serverMiddleware: [
     { path: '/api', handler: '~/server/index.ts' }

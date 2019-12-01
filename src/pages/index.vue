@@ -38,11 +38,11 @@
           <div class="text-xs-right">
             <em><small>&mdash; John Leider</small></em>
           </div>
-          <hr class="my-3" />
+          <hr class="my-3">
           <a href="https://nuxtjs.org/" target="_blank">
             Nuxt Documentation
           </a>
-          <br />
+          <br>
           <a href="https://github.com/nuxt/nuxt.js" target="_blank">
             Nuxt GitHub
           </a>
@@ -59,4 +59,6 @@
 </template>
 
 <script lang="ts">
+  export default {
+  }
 </script>

@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-feedbackdiary-dev-160411-authRole",
+            "UnauthRoleArn": "arn:aws:iam::348342725339:role/amplify-feedbackdiary-dev-160411-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::348342725339:role/amplify-feedbackdiary-dev-160411-authRole",
+            "Region": "ap-southeast-1",
+            "DeploymentBucketName": "amplify-feedbackdiary-dev-160411-deployment",
+            "UnauthRoleName": "amplify-feedbackdiary-dev-160411-unauthRole",
+            "StackName": "amplify-feedbackdiary-dev-160411",
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:348342725339:stack/amplify-feedbackdiary-dev-160411/88fd21d0-1419-11ea-a3e2-062b7ab1ef08"
+        },
+        "categories": {
+            "auth": {
+                "feedbackdiaryf1d98f92": {}
+            }
+        }
+    }
+}

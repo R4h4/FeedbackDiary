@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "feedbackdiary",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authfeedbackdiaryf1d98f92",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

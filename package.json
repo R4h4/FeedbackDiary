@@ -16,6 +16,8 @@
     "@nuxtjs/axios": "latest",
     "@nuxtjs/dotenv": "latest",
     "@nuxtjs/pwa": "latest",
+    "aws-amplify": "^1.2.4",
+    "aws-amplify-vue": "^0.3.3",
     "cross-env": "^5.2.0",
     "express": "latest",
     "nuxt": "latest",
@@ -23,6 +25,7 @@
     "vue-property-decorator": "^8.3.0"
   },
   "devDependencies": {
+    "@mdi/font": "^4.6.95",
     "@nuxt/typescript-build": "latest",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "latest",
