@@ -64,9 +64,9 @@
   </v-app>
 </template>
 
-<script>
+<script lang="js">
 export default {
-  data() {
+  data () {
     return {
       clipped: false,
       drawer: false,

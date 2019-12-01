@@ -1,4 +1,9 @@
-export default {
+// nuxt.config.ts
+import { Configuration } from '@nuxt/types'
+
+const nuxtConfig: Configuration = {
+  mode: 'universal',
+  srcDir: 'src',
   env: {},
   head: {
     title: '{{ name }}',
@@ -21,22 +26,48 @@ export default {
   },
   loading: { color: '#3B8070' },
   css: [],
-  build: {},
   plugins: [],
   buildModules: [
+    '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify',
-    '@nuxt/typescript-build'
+    '@nuxtjs/vuetify'
   ],
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    '@nuxtjs/eslint-module'
+  ],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     optionsPath: '~/plugins/vuetify.options.js',
     defaultAssets: {
       icons: {
-        iconfont: 'fa'
+        iconfont: 'mdi'
       }
     }
   },
-  axios: {}
+  serverMiddleware: [
+    { path: '/api', handler: '~/server/index.ts' }
+  ],
+  axios: {},
+  build: {
+    /**
+     * You can extend webpack config here
+     */
+    extend (config, ctx): void {
+      // Run ESLint on save
+      if (ctx.isDev && process.client) {
+        if (config.module) {
+          config.module.rules.push({
+            enforce: 'pre',
+            test: /\.(js|vue)$/,
+            loader: 'eslint-loader',
+            exclude: /(node_modules)/
+          })
+        }
+      }
+    }
+  }
 }
+
+module.exports = nuxtConfig
