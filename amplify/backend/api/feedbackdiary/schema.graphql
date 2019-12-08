@@ -1,3 +1,11 @@
+type User @model
+@auth(rules: [{allow: owner}]) {
+  id: ID!
+  username: String!
+  firstName: String!
+  lastName: String!
+}
+
 type Team @model
 @auth(rules: [{allow: owner}]) {
   id: ID!
@@ -12,6 +20,7 @@ type Member @model
   id: ID!
   name: String!
   position: String
+  icon: String
   team: Team @connection(name: "TeamMembers")
   feedback: [Feedback] @connection(name: "MemberFeedbacks")
   created_at: AWSDateTime

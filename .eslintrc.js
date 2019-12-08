@@ -18,7 +18,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'nuxt/no-cjs-in-config': 'off',
-    "vue/script-indent": ["error", 2, { "baseIndent": 1 }]
+   // "vue/script-indent": ["error", 2, { "baseIndent": 1 }]
   },
   "overrides": [
     {
